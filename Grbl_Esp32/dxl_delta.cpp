@@ -41,7 +41,7 @@
  const float rf = 70.0; // radius of the fixed side (length of motor craks)
  const float re =  133.5; // radius of end effector side (length of linkages)
 
-const float f = 179.437f; // sized of fixed side triangel
+const float f = 173.205f; // sized of fixed side triangle
 const float e = 86.6025f; // size of end effector side triangle
 
 float delta_z_offset;

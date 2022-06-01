@@ -39,6 +39,18 @@
 #define DXL_MOTOR_2_FWD     true
 #define DXL_MOTOR_2_CENTER  (2048 - 33)
 
+#define DXL_MOTOR_3_ID      4
+#define DXL_MOTOR_3_FWD     true
+#define DXL_MOTOR_3_CENTER  2048
+
+#define DXL_MOTOR_4_ID      5
+#define DXL_MOTOR_4_FWD     true
+#define DXL_MOTOR_4_CENTER  2048
+
+#define DXL_MOTOR_5_ID      6
+#define DXL_MOTOR_5_FWD     true
+#define DXL_MOTOR_5_CENTER  2048
+
 #define DXL_COUNT_PER_DEG   4095.0f / 360.0f
 
 #define MAX_DOWN_ANGLE 90
@@ -71,6 +83,7 @@
 	Servo3 = GPIO_NUM_16	
 */
 
+/*
 #define USER_DIGITAL_PIN_1			GPIO_NUM_25
 #define USER_DIGITAL_PIN_1_MODE		USER_IO_MODE_SPIKE_HOLD_OFF
 #define USER_DIGITAL_PIN_2			GPIO_NUM_26
@@ -80,11 +93,22 @@
 
 #define USER_DIGITAL_PIN_4			GPIO_NUM_2
 #define USER_DIGITAL_PIN_4_MODE		USER_MODE_PWM_LOW_HIGH
+*/
+
+#define USER_DIGITAL_PIN_1			GPIO_NUM_2
+#define USER_DIGITAL_PIN_1_MODE		USER_MODE_PWM_LOW_HIGH
+#define USER_DIGITAL_PIN_2			GPIO_NUM_15
+#define USER_DIGITAL_PIN_2_MODE		USER_MODE_PWM_LOW_HIGH
+#define USER_DIGITAL_PIN_3			GPIO_NUM_16
+#define USER_DIGITAL_PIN_3_MODE		USER_MODE_PWM_LOW_HIGH
+
+#define USER_DIGITAL_PIN_4			GPIO_NUM_25
+#define USER_DIGITAL_PIN_4_MODE		USER_IO_MODE_SPIKE_HOLD_OFF
 
 
 // defaults
 #define DEFAULT_STEP_PULSE_MICROSECONDS 3 
-#define DEFAULT_STEPPER_IDLE_LOCK_TIME 200 // 200ms
+#define DEFAULT_STEPPER_IDLE_LOCK_TIME 255 // 200ms
 
 #define DEFAULT_STATUS_REPORT_MASK 1
 
@@ -101,20 +125,32 @@
 #define DEFAULT_X_STEPS_PER_MM 80 // value is actually arbitrary, but keep it smallish
 #define DEFAULT_Y_STEPS_PER_MM 80
 #define DEFAULT_Z_STEPS_PER_MM 80
+#define DEFAULT_A_STEPS_PER_MM 1
+#define DEFAULT_B_STEPS_PER_MM 1
+#define DEFAULT_C_STEPS_PER_MM 1
 
 // keep axis xyz axis values the same.
 #define DEFAULT_X_MAX_RATE 40000.0 // mm/min
 #define DEFAULT_Y_MAX_RATE 40000.0 // mm/min
 #define DEFAULT_Z_MAX_RATE 40000.0 // mm/min
+#define DEFAULT_A_MAX_RATE 200000.0 // mm/min
+#define DEFAULT_B_MAX_RATE 200000.0 // mm/min
+#define DEFAULT_C_MAX_RATE 200000.0 // mm/min
 
-#define DEFAULT_X_ACCELERATION (200.0*60*60) // 10*60*60 mm/min^2 = 10 mm/sec^2
-#define DEFAULT_Y_ACCELERATION (200.0*60*60) // 10*60*60 mm/min^2 = 10 mm/sec^2
-#define DEFAULT_Z_ACCELERATION (200.0*60*60) 
+#define DEFAULT_X_ACCELERATION (10000.0*60*60) // 10*60*60 mm/min^2 = 10 mm/sec^2
+#define DEFAULT_Y_ACCELERATION (10000.0*60*60) // 10*60*60 mm/min^2 = 10 mm/sec^2
+#define DEFAULT_Z_ACCELERATION (10000.0*60*60) 
+#define DEFAULT_A_ACCELERATION (50000.0*60*60)
+#define DEFAULT_B_ACCELERATION (50000.0*60*60) 
+#define DEFAULT_C_ACCELERATION (50000.0*60*60)  
 
 // not used right now
 #define DEFAULT_X_MAX_TRAVEL 200 // mm NOTE: Must be a positive value.
 #define DEFAULT_Y_MAX_TRAVEL 200 // mm NOTE: Must be a positive value.
 #define DEFAULT_Z_MAX_TRAVEL 200 // mm NOTE: Must be a positive value.
+#define DEFAULT_A_MAX_TRAVEL 2050 // mm NOTE: Must be a positive value.
+#define DEFAULT_B_MAX_TRAVEL 2050 // mm NOTE: Must be a positive value.
+#define DEFAULT_C_MAX_TRAVEL 2050 // mm NOTE: Must be a positive value.
 
 // set solenoid defaults
 #define DEFAULT_USER_INT_80 100 // spike duration ms
